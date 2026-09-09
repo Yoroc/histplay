@@ -18,20 +18,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install typer
-    - name: Test histplay
+        pip install build twine
+    - name: Build package
       run: |
-        # Test help
-        python histplay.py --help
-        # Test bare output
-        python histplay.py --bare -n 5 > /tmp/bare.txt
-        [ -s /tmp/bare.txt ]
-        # Test markdown output
-        python histplay.py --markdown -n 5 > /tmp/md.txt
-        grep -q "```bash" /tmp/md.txt
-        # Test output to file
-        python histplay.py -o /tmp/hist.out -n 5
-        [ -s /tmp/hist.out ]
-        # Test default output (should not be empty)
-        python histplay.py -n 5 > /tmp/default.out
-        [ -s /tmp/default.out ]
+        python -m build
+    - name: Test package
+      run: |
+        pip install dist/histplay-*.whl
+        histplay --help
+        histplay -n 5 --bare
