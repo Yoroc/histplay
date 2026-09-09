@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+histplay.egg-info/PKG-INFO
+histplay.egg-info/SOURCES.txt
+histplay.egg-info/dependency_links.txt
+histplay.egg-info/requires.txt
+histplay.egg-info/top_level.txt
