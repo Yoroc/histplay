@@ -1,7 +1,10 @@
 README.md
 pyproject.toml
+histplay/__init__.py
+histplay/__main__.py
 histplay.egg-info/PKG-INFO
 histplay.egg-info/SOURCES.txt
 histplay.egg-info/dependency_links.txt
+histplay.egg-info/entry_points.txt
 histplay.egg-info/requires.txt
 histplay.egg-info/top_level.txt
